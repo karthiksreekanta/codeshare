@@ -1,0 +1,29 @@
+#%RAML 1.0
+title: WeatherAPI
+baseUri: http://localhost:8081
+
+/cities:
+  get: 
+    queryParameters:
+      country:
+        displayName: country
+        type: string
+        required: true
+        example: Australia	
+    description: Lists all prominent cities in the specified country
+    responses: 
+      200:
+        body: 
+          application/json:
+            
+/weather:
+  /{country}:
+    /{city}:
+      get:
+        description: Get weather data for the specified country/city combination
+        responses: 
+          200:
+            body:
+              application/json: 
+                example: |
+         
